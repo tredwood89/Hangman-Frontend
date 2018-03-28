@@ -1,0 +1,99 @@
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.dash {
+  /*line-height: 6rem;*/
+
+  border-bottom: 2px solid;
+  border-bottom-color: green;
+  height: 2rem;
+  width: 1.75rem;
+  margin: 1rem;
+  color: white;
+  font-size: 2.2rem;
+  /*visibility: hidden;*/
+  /*display: inline-block;*/
+}
+
+.noDash {
+  /*line-height: 6rem;*/
+  /*border-bottom: 2px solid;*/
+  border-bottom: 2px solid;
+  border-bottom-color: green;
+  height: 2rem;
+  width: 1.75rem;
+  margin: 1rem;
+  color: green;
+  font-size: 2.2rem;
+  /*visibility: hidden;*/
+}
+.inline {
+  display: inline-block
+}
+ input {
+   size:35;
+ }
+
+.gameOver {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  margin: -47px  -200px;
+}
+
+.overMsg {
+  text-align: center;
+}
+
+i {
+  display: inline-block
+}
+
+.word {
+  display: inline-block
+}
+
+.strike {
+  position: relative;
+  width: 300rem;
+  /*height: 200px;*/
+  /*z-index: 15;*/
+  /*top: 50%;*/
+  left: 40%;
+  margin: -50px 0 0 -200px;
+  /*background: red;*/
+}
+
+.title {
+  text-align: center;
+  display: block;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
