@@ -35,9 +35,9 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 ## Technical Points ##
 
 
-*Frontend: React. JS
-*Styled: Semantic UI and raw CSS
-*Backend: Ruby on Rails
+* **Frontend**: React. JS
+* **Styled**: Semantic UI and raw CSS
+* **Backend**: Ruby on Rails
 
 ## Demo ##
 
