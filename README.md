@@ -10,9 +10,9 @@ Can you beat the longest streak?
 
 # HangMan #
 
-* Classic rules apply. Guess the word correctly before the hang-man is completed.
+**Classic rules apply. Guess the word correctly before the hang-man is completed.
 Hint option provides word definition and part of speech.
-Streak Tracker: keeps track of who has the longest streak of correctly guessed words. *
+Streak Tracker: keeps track of who has the longest streak of correctly guessed words**
 
 ..* Hangman Frontend repo:https://github.com/tredwood89/Hangman-Frontend 
 ..* Hangman Backend repo: https://github.com/tredwood89/Hangman-Backend
@@ -35,9 +35,9 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 ## Technical Points ##
 
 
-...* Frontend: React. JS
-...* Styled: Semantic UI and raw CSS
-...* Backend: Ruby on Rails
+*Frontend: React. JS
+*Styled: Semantic UI and raw CSS
+*Backend: Ruby on Rails
 
 ## Demo ##
 
