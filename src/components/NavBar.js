@@ -10,7 +10,7 @@ const NavBar = (props) => {
 // <Route path="/home" component={GameContainer} />
 
   return(
-    <div>
+    <div >
       <Link to="addword">Add New Word</Link>
       <Route path="/addword" component={WordCrudContainer}/>
 

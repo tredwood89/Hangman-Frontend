@@ -71,7 +71,7 @@ class GameContainer extends React.Component {
       }
     }
           checkStateForLost = ()=> {
-            console.log(this.state.strike);
+    
             if (this.state.strike === 6 ){
               console.log('game over');
               let letterState = this.changeLetterStateToTrue(this.state.letterState)
@@ -102,7 +102,7 @@ class GameContainer extends React.Component {
 
 
     winOrLose = (value) => {
-    
+
       if (value === true){
 
         return <div className="gameOver">

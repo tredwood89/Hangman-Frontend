@@ -6,8 +6,9 @@ const url = "http://localhost:4000/api/v1/words"
 
 class WordCrudContainer extends React.Component {
 
-
   createNewWordFetch = (input) => {
+
+
     console.log(input);
     let newWord = input
     let difficulty = this.setWordDifficulty(input)
@@ -28,17 +29,24 @@ class WordCrudContainer extends React.Component {
 
     fetch(url,options)
       .then((res)=>res.json())
-      .then((json)=>console.log(json))
+      .then((json)=>this.notifyWordSaved(json))
+  }
+
+  notifyWordSaved = (obj) => {
+    if (obj) {
+      alert(obj.choice.toUpperCase()+" Added Successfully")
+      // this.componentWillUnMount(console.log("unmounted"))
+    }
   }
 
   setWordDifficulty = (word) => {
-    if (word.length < 7){
+    if (word.length < 7) {
       return "easy"
-      } else if (word.length > 6 && word.lenth < 11) {
+    } else if (word.length > 6 && word.lenth < 11) {
         return "medium"
-        } else {
+    } else {
           return "hard"
-        }
+    }
   }
 
 
@@ -46,8 +54,9 @@ class WordCrudContainer extends React.Component {
   render(){
     return(
       <div>
-      
+
         <Wordform  addNewWord={this.createNewWordFetch}/>
+
       </div>
     )
   }

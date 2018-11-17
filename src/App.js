@@ -5,8 +5,10 @@ import GameContainer from "./containers/GameContainer";
 // import WordCrudContainer from "./containers/WordCrudContainer"
 import DictionaryContainer from "./containers/DictionaryContainer"
 // import HintComponent from "./components/HintComponent";
+import { Route, Link } from "react-router-dom";
 import TopScoreComponent from "./components/TopScoreComponent";
 import TitleComponent from "./components/TitleComponent";
+import WordCrudContainer from "./containers/WordCrudContainer"
 
 class App extends Component {
 
@@ -49,23 +51,28 @@ class App extends Component {
   setWinState = () => {
     return this.state.wins
   }
-
+  // <div align="center">
+  //   <Link to="addword">Add New Word</Link>
+  //     <Route path="/addword" component={WordCrudContainer}/>
+  //
+  // </div>
   render() {
-      let wins = this.setWinState()
+
     return (
       <div>
-          <TitleComponent />
+        <TitleComponent />
+
 
 
         <div className="ui container">
-          <div><TopScoreComponent wins={this.state.wins}/> </div>
+            <TopScoreComponent wins={this.state.wins}/>
             <GameContainer   tallyRecord={this.tallyWins}resetDictionaryHint={this.resetDictionary} getDefinition={this.handleGetDefinition}/>
 
-          <DictionaryContainer showHint={this.state.showHint}lookUpWord={this.state.word}/>
+            <DictionaryContainer showHint={this.state.showHint}lookUpWord={this.state.word}/>
         </div>
 
-       {/*<WordCrudContainer />*/}
 
+        <WordCrudContainer/>
       </div>
     );
   }

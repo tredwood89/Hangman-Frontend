@@ -3,7 +3,8 @@ import React from 'react'
 class Wordform extends React.Component {
 
   state = {
-    wordInput:""
+    wordInput:"",
+    displayWordInput:true
   }
 
   handleWordChange = (event) => {
@@ -17,32 +18,45 @@ class Wordform extends React.Component {
   handleClick = (event) => {
     event.preventDefault()
     let wordInput = this.state.wordInput
-    if (this.validateWord(wordInput)){
+    if (!this.isValidWord(wordInput)){
         alert("Re-enter word without special characters")
       } else {
-        this.props.addNewWord(wordInput)
+
+        this.setState({
+          displayWordInput: !this.state.displayWordInput
+        }, this.props.addNewWord(wordInput) )
     }
+
   }
 
 
-  validateWord = (input) => {
+  isValidWord = (input) => {
     let format = /[!@#$%^&* ()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     if(format.test(input)){
-      return true
-    } else {
       return false
+    } else {
+      return true
     }
   }
+
+
 
 
   render(){
+    let shouldDisplayInput = this.state.displayWordInput ?
+    ( <div>
+       <label>Whats the Word?</label>
+       <input type="text" placeholder="enter word" onChange={(e)=>this.handleWordChange(e)}></input>
+     </div> )   :
+    null
+
     return(
       <div>
         <div className="ui container">
           <form className="ui form">
             <div className="field">
-              <label>Whats the Word?</label>
-              <input type="text" placeholder="enter word" onChange={(e)=>this.handleWordChange(e)}></input>
+              {shouldDisplayInput}
+
               <button className="mini ui button" type="submit" onClick={(e)=>this.handleClick(e)}>Add Word</button>
             </div>
           </form>

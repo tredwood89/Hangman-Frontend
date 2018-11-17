@@ -60,7 +60,7 @@ class DictionaryContainer extends React.Component {
   }
 
   render(){
-        console.log(this.props.showHint);
+        
       let hintBox = <div>
                       <br></br>
                       <div className="ui compact segments">

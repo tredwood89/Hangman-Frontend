@@ -24,7 +24,7 @@ class TopScoreComponent extends React.Component {
           this.setState({
             name,
             bestScore
-          },()=>console.log(this.state))
+          })
         })
     }
 
@@ -71,15 +71,15 @@ class TopScoreComponent extends React.Component {
     }
 
   render(){
-    console.log(this.checkNewTopScore());
 
     return (
+      <div >
         <div className= "ui compact segment">
           <div>
           <div>
             <p>Current Win Streak: <strong>{this.props.wins}</strong> {this.state.bestScore===1?"win":"wins"}</p>
             <p>Top Streak Holder: <strong>{this.state.name}</strong></p>
-            <p>Longest Streak: <strong>{this.state.bestScore}</strong> wins </p>
+            <p>Longest Streak: <strong>{this.state.bestScore ? this.state.bestScore : "0"}</strong> wins </p>
           </div>
           { this.checkNewTopScore() ?
             <div className = "ui input">
@@ -89,6 +89,7 @@ class TopScoreComponent extends React.Component {
             null}
           </div>
        </div>
+      </div>
     )
   }
 }
