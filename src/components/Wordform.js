@@ -18,12 +18,20 @@ class Wordform extends React.Component {
   handleClick = (event) => {
     event.preventDefault()
     let wordInput = this.state.wordInput
+    if (!this.state.displayWordInput){
+      this.setState({
+        displayWordInput: !this.state.displayWordInput
+      })
+
+      return;
+    }
     if (!this.isValidWord(wordInput)){
         alert("Re-enter word without special characters")
       } else {
 
         this.setState({
-          displayWordInput: !this.state.displayWordInput
+          displayWordInput: !this.state.displayWordInput,
+          wordInput: ""
         }, this.props.addNewWord(wordInput) )
     }
 
