@@ -20,7 +20,10 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 
 ## How to Use ##
 
-
+* Must have API key to access Words API. Once key is obtained:
+  - create ```keycode.js``` file in src folder
+  - with in this file add: ```const keycode = APIKEY```
+  
 * Fork and clone repos front and back end
 
   to access words: [http://localhost:4000/api/v1/words]
@@ -38,6 +41,7 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 * **Frontend**: React. JS
 * **Styled**: Semantic UI and raw CSS
 * **Backend**: Ruby on Rails
+* **Dictionary API**: Words API powered through Rapid API. https://rapidapi.com/wordsapi/api/WordsAPI
 
 ## Demo ##
 
