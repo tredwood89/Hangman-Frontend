@@ -14,9 +14,9 @@ Can you beat the longest streak?
 Hint option provides word definition and part of speech.
 Streak Tracker: keeps track of who has the longest streak of correctly guessed words**
 
-..* Hangman Frontend repo:https://github.com/tredwood89/Hangman-Frontend 
+ - Hangman Frontend repo:https://github.com/tredwood89/Hangman-Frontend 
 
-..* Hangman Backend repo: https://github.com/tredwood89/Hangman-Backend
+ - Hangman Backend repo: https://github.com/tredwood89/Hangman-Backend
 
 
 ## How to Use ##
