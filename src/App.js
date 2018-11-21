@@ -5,7 +5,6 @@ import GameContainer from "./containers/GameContainer";
 // import WordCrudContainer from "./containers/WordCrudContainer"
 import DictionaryContainer from "./containers/DictionaryContainer"
 // import HintComponent from "./components/HintComponent";
-import { Route, Link } from "react-router-dom";
 import TopScoreComponent from "./components/TopScoreComponent";
 import TitleComponent from "./components/TitleComponent";
 import WordCrudContainer from "./containers/WordCrudContainer"
@@ -62,12 +61,13 @@ class App extends Component {
       <div>
         <TitleComponent />
 
-
-
         <div className="ui container">
+          <div>
             <TopScoreComponent wins={this.state.wins}/>
+          </div>
+          <div>
             <GameContainer   tallyRecord={this.tallyWins}resetDictionaryHint={this.resetDictionary} getDefinition={this.handleGetDefinition}/>
-
+          </div>
             <DictionaryContainer showHint={this.state.showHint}lookUpWord={this.state.word}/>
         </div>
 

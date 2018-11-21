@@ -4,7 +4,7 @@ class Wordform extends React.Component {
 
   state = {
     wordInput:"",
-    displayWordInput:true
+    displayWordInput:false
   }
 
   handleWordChange = (event) => {

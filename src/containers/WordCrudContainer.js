@@ -1,6 +1,5 @@
 import React from 'react';
 import Wordform from '../components/Wordform';
-import NavBar from "../components/NavBar";
 
 const url = "http://localhost:4000/api/v1/words"
 

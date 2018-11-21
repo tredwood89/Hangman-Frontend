@@ -7,7 +7,7 @@ const StrikeComponent = (props) => {
 
   return(
     <div>
-      <img alt="" src={Hangmanpics[`strike${props.strike}`]}></img>
+      <img alt="hangmanProgression" src={Hangmanpics[`strike${props.strike}`]}></img>
     </div>
   )
 }
