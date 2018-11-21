@@ -1,4 +1,4 @@
-Hangman REact is a classic hangman game built on React JS.
+Hangman React is a classic hangman game built on React JS.
 
 Classic rules apply. Guess the word correctly before the hang-man is completed.
 If you need help, select the hint option for the word definition and part of speech.
@@ -14,17 +14,22 @@ Can you beat the longest streak?
 Hint option provides word definition and part of speech.
 Streak Tracker: keeps track of who has the longest streak of correctly guessed words**
 
-..* Hangman Frontend repo:https://github.com/tredwood89/Hangman-Frontend 
-..* Hangman Backend repo: https://github.com/tredwood89/Hangman-Backend
+ - Hangman Frontend repo:https://github.com/tredwood89/Hangman-Frontend 
+
+ - Hangman Backend repo: https://github.com/tredwood89/Hangman-Backend
 
 
 ## How to Use ##
 
-
+* Must have API key to access Words API. Once key is obtained:
+  - create ```keycode.js``` file in src folder
+  - with in this file add: ```const keycode = APIKEY```
+  
 * Fork and clone repos front and back end
 
-  to access words: [http://localhost:4000/api/v1/words]
-  to access to streak holders: [http://localhost:4000/api/v1/topscores]
+  - to access words: [http://localhost:4000/api/v1/words]
+  
+  - to access to streak holders: [http://localhost:4000/api/v1/topscores]
 
 * START GAME : starts Hangman game by randomly selecting a word to guess
 * LETTERS : guess a letter by clicking the asscoiated letter button
@@ -38,6 +43,7 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 * **Frontend**: React. JS
 * **Styled**: Semantic UI and raw CSS
 * **Backend**: Ruby on Rails
+* **Dictionary API**: Words API powered through Rapid API. https://rapidapi.com/wordsapi/api/WordsAPI
 
 ## Demo ##
 
