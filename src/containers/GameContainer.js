@@ -4,6 +4,8 @@ import AlphabetButton from "../components/AlphabetButton";
 import StrikeComponent from "../components/StrikeComponent"
 // import HintComponent from "../components/HintComponent";
 import uuid from "uuid"
+import axios from 'axios';
+
 const url = "http://localhost:4000/api/v1/words"
 
 class GameContainer extends React.Component {
@@ -26,19 +28,19 @@ class GameContainer extends React.Component {
     }
 
     fetchNewWord = () => {
-      fetch(url)
-        .then((res)=>res.json())
-        .then((wordList)=>{
-            let randomWord = wordList[Math.floor(Math.random()*wordList.length)].choice;
-            this.props.getDefinition(randomWord);
-              this.setState({
-                word:randomWord
-              },()=>this.makeState(randomWord))
+      axios.get(url)
+        .then(response => {
+          let totalWordEntries = response.data.length
+          let randomWord = response.data[Math.floor(Math.random()*totalWordEntries)].choice;
+          this.props.getDefinition(randomWord);
+          this.setState({
+            word:randomWord
+          },()=>this.makeState(randomWord))
         })
     }
 
-    makeState = (word) => {
-      console.log(word);
+
+     makeState = (word) => {
       let wordArr = word.split("")
 
       let letterState = {}
@@ -71,7 +73,7 @@ class GameContainer extends React.Component {
       }
     }
           checkStateForLost = ()=> {
-    
+
             if (this.state.strike === 6 ){
               console.log('game over');
               let letterState = this.changeLetterStateToTrue(this.state.letterState)

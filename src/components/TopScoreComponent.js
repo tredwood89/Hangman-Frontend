@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 const url = "http://localhost:4000/api/v1/topscores"
 
 
@@ -14,18 +15,17 @@ class TopScoreComponent extends React.Component {
   }
 
     fetchTopScore = () => {
-      fetch(url)
-        .then((res)=>res.json())
-        .then((topScore)=>{
-
-          let name = topScore[0].name
-          let bestScore = topScore[0].score
+      axios.get(url)
+        .then(response => {
+          let name = response.data[0].name
+          let bestScore = response.data[0].score
 
           this.setState({
-            name,
-            bestScore
-          })
+                name,
+                bestScore
+              })
         })
+
     }
 
 
@@ -37,27 +37,23 @@ class TopScoreComponent extends React.Component {
       })
     }
 
-    handleClick = () =>{
+    handleClick = () => {
       let name = this.state.newTop
       let newBestScore = this.props.wins
-      let options = {
-        method:"PATCH",
-        headers:{
-          "Content-Type":"application/json",
-          Accept: "application/json"
-        },
-        body:JSON.stringify( {"name":`${name}`,
-                              "score":`${newBestScore}`} )
+      let topScoreData = {
+        "name":`${name}`,
+        "score":`${newBestScore}`
       }
-      fetch(url+"/1",options)
-        .then((res)=>res.json())
-        .then((topscore)=>{
-          let name = topscore.name
+  
+      axios.patch(url+"/1", topScoreData)
+        .then(response => {
+          console.log(response);
           this.setState({
-            name,
-            bestScore:newBestScore
-          })
+                name: response.data.name,
+                bestScore:newBestScore
+              })
         })
+
     }
 
     checkNewTopScore=()=>{

@@ -1,5 +1,6 @@
 import React from 'react';
 import Wordform from '../components/Wordform';
+import axios from 'axios';
 
 const url = "http://localhost:4000/api/v1/words"
 
@@ -7,29 +8,18 @@ class WordCrudContainer extends React.Component {
 
   createNewWordFetch = (input) => {
 
-
-    console.log(input);
     let newWord = input
     let difficulty = this.setWordDifficulty(input)
-    console.log(difficulty);
-    let options = {
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-         Accept: "application/json"
-      },
-      body:JSON.stringify({
-        "word":{
-          "choice":`${newWord}`,
-          "difficulty":`${difficulty}`
-        }
-      })
+    let newWordData = {
+      "choice":`${newWord}`,
+      "difficulty":`${difficulty}`
     }
 
-    fetch(url,options)
-      .then((res)=>res.json())
-      .then((json)=>this.notifyWordSaved(json))
-  }
+    axios.post(url, newWordData)
+      .then(response => {
+        this.notifyWordSaved(response.data)
+      })
+    }
 
   notifyWordSaved = (obj) => {
     if (obj) {

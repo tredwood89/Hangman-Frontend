@@ -1,6 +1,7 @@
 import React from 'react';
 import keycode from "../keycode"
 import HintComponent from "../components/HintComponent";
+import axios from 'axios';
 
 
 
@@ -26,29 +27,24 @@ class DictionaryContainer extends React.Component {
 
 
   fetchDicitonary = () => {
-
     let word = this.props.lookUpWord
-    console.log(word);
-    let options = {
-      headers:{
-        "X-Mashape-Key":keycode,
-        "Accept": "application/json",
-        "X-Mashape-Host":"wordsapiv1.p.mashape.com"
-      }
+
+    axios.get(`https://wordsapiv1.p.mashape.com/words/${word}/definitions`, {
+    headers:{
+      "X-Mashape-Key":keycode,
+      "X-Mashape-Host":"wordsapiv1.p.mashape.com"
     }
-    fetch(`https://wordsapiv1.p.mashape.com/words/${word}/definitions`,options)
-    .then((res)=>res.json())
-    .then((wordInfo)=> {
-      let define = wordInfo.definitions[0].definition
-      let pos = wordInfo.definitions[0].partOfSpeech
-      let speech = pos ? pos : "n/a"
-
-
+  })
+  .then(response => {
+    let pos = response.data.definitions[0].partOfSpeech
+    let speech = pos ? pos : "n/a"
+      //not all words have a designated PoS
       this.setState({
-        definition:define,
+        definition: response.data.definitions[0].definition,
         partOfSpeech:speech
       })
     })
+
   }
 
   componentWillReceiveProps(props){
@@ -60,7 +56,7 @@ class DictionaryContainer extends React.Component {
   }
 
   render(){
-        
+
       let hintBox = <div>
                       <br></br>
                       <div className="ui compact segments">
