@@ -6,7 +6,7 @@ import StrikeComponent from "../components/StrikeComponent"
 import uuid from "uuid"
 import axios from 'axios';
 
-const url = "http://localhost:4000/api/v1/words"
+const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
 
 class GameContainer extends React.Component {
 
