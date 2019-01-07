@@ -2,7 +2,9 @@ import React from 'react';
 import Wordform from '../components/Wordform';
 import axios from 'axios';
 
-const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
+const url = 'http://localhost:4000/api/v1/words'
+// const url = process.env.HOST + "/words"
+// const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
 
 class WordCrudContainer extends React.Component {
 

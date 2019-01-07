@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-const url = "https://hangman-react-backend.herokuapp.com/api/v1/topscores"
+const url = 'http://localhost:4000/api/v1/topscores'
+
+// const url = "https://hangman-react-backend.herokuapp.com/api/v1/topscores"
 
 
 

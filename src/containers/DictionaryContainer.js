@@ -25,11 +25,11 @@ class DictionaryContainer extends React.Component {
     this.fetchDicitonary()
   }
 
-
+// const proxyurl = "https://cors-anywhere.herokuapp.com/"
   fetchDicitonary = () => {
     let word = this.props.lookUpWord
 
-    axios.get(`https://wordsapiv1.p.mashape.com/words/${word}/definitions`, {
+    axios.get(`https://cors-anywhere.herokuapp.com/https://wordsapiv1.p.mashape.com/words/${word}/definitions`, {
     headers:{
       "X-Mashape-Key":keycode,
       "X-Mashape-Host":"wordsapiv1.p.mashape.com"

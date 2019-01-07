@@ -5,8 +5,9 @@ import StrikeComponent from "../components/StrikeComponent"
 // import HintComponent from "../components/HintComponent";
 import uuid from "uuid"
 import axios from 'axios';
+const url = 'http://localhost:4000/api/v1/words'
 
-const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
+// const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
 
 class GameContainer extends React.Component {
 
@@ -30,9 +31,11 @@ class GameContainer extends React.Component {
     fetchNewWord = () => {
       axios.get(url)
         .then(response => {
+          console.log(response);
           let totalWordEntries = response.data.length
           let randomWord = response.data[Math.floor(Math.random()*totalWordEntries)].choice;
           this.props.getDefinition(randomWord);
+
           this.setState({
             word:randomWord
           },()=>this.makeState(randomWord))
