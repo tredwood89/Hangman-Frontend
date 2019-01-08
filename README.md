@@ -47,9 +47,9 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 * **Backend**: Ruby on Rails
 * **Dictionary API**: Words API powered through Rapid API. https://rapidapi.com/wordsapi/api/WordsAPI
 
-## Demo ##
+## Live Demo ##
 
-[https://hangmanreact2.surge.sh]
+https://hangmanreact2.surge.sh
 
 
 
