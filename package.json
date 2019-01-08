@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && mv build/index.html build/200.html && surge build"
   },
-  "browserslist":[
+  "browserslist": [
     "last 1 version",
     "not dead",
     "> 1% in US"
