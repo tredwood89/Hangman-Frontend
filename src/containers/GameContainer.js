@@ -2,12 +2,9 @@ import React from 'react';
 import LetterSpace from "../components/LetterSpace";
 import AlphabetButton from "../components/AlphabetButton";
 import StrikeComponent from "../components/StrikeComponent"
-// import HintComponent from "../components/HintComponent";
 import uuid from "uuid"
 import axios from 'axios';
-const url = 'http://localhost:4000/api/v1/words'
-
-// const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
+const url = process.env.REACT_APP_HOST
 
 class GameContainer extends React.Component {
 
@@ -29,7 +26,7 @@ class GameContainer extends React.Component {
     }
 
     fetchNewWord = () => {
-      axios.get(url)
+      axios.get(url + "/words")
         .then(response => {
           console.log(response);
           let totalWordEntries = response.data.length
