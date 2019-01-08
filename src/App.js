@@ -50,11 +50,7 @@ class App extends Component {
   setWinState = () => {
     return this.state.wins
   }
-  // <div align="center">
-  //   <Link to="addword">Add New Word</Link>
-  //     <Route path="/addword" component={WordCrudContainer}/>
-  //
-  // </div>
+
   render() {
 
     return (

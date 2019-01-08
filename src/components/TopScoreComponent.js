@@ -23,9 +23,7 @@ class TopScoreComponent extends React.Component {
                 bestScore
               })
         })
-
     }
-
 
     handleOnChange = (event) => {
       let newTop = event.target.value
@@ -54,7 +52,7 @@ class TopScoreComponent extends React.Component {
 
     }
 
-    checkNewTopScore=()=>{
+    checkNewTopScore=() => {
       let prevScore = this.props.wins
       let currentScore = this.state.bestScore
       return (prevScore > currentScore ? true : false)

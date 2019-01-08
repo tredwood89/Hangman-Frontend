@@ -48,8 +48,6 @@ class Wordform extends React.Component {
   }
 
 
-
-
   render(){
     let shouldDisplayInput = this.state.displayWordInput ?
     ( <div>
