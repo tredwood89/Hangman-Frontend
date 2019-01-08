@@ -22,8 +22,10 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 ## How to Use ##
 
 * Must have API key to access Words API. Once key is obtained:
-  - create ```keycode.js``` file in src folder
-  - with in this file add: ```const keycode = APIKEY```
+  - create .env file with the following keys:
+  - REACT_APP_HOST = [localhost url for dev]
+  - REACT_APP_WORDS_HOST = [words api url]
+  - REACT_APP_keycode =[words api key
   
 * Fork and clone repos front and back end
 
@@ -47,7 +49,7 @@ Streak Tracker: keeps track of who has the longest streak of correctly guessed w
 
 ## Demo ##
 
-[https://www.youtube.com/watch?v=oOFhuDFl_wg]
+[https://hangmanreact2.surge.sh]
 
 
 
