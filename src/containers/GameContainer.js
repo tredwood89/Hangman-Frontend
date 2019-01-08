@@ -135,7 +135,7 @@ class GameContainer extends React.Component {
             return <LetterSpace key={uuid()}  value={this.state.letterState[`${letter}`] }
                                 letter={letter}/>
           })
-console.log(process.env)
+
       return(
 
         <div>

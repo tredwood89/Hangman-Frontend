@@ -6,8 +6,7 @@ import WordCrudContainer from "../containers/WordCrudContainer";
 const NavBar = (props) => {
 
 
-// <Link to="home"> | Home</Link>
-// <Route path="/home" component={GameContainer} />
+
 
   return(
     <div >

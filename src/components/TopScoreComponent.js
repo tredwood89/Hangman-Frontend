@@ -2,10 +2,6 @@ import React from 'react';
 import axios from 'axios';
 const url = process.env.REACT_APP_HOST
 
-// const url = "https://hangman-react-backend.herokuapp.com/api/v1/topscores"
-
-
-
 
 class TopScoreComponent extends React.Component {
 
