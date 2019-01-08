@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-const url = 'http://localhost:4000/api/v1/topscores'
+const url = process.env.REACT_APP_HOST
 
 // const url = "https://hangman-react-backend.herokuapp.com/api/v1/topscores"
 
@@ -17,7 +17,7 @@ class TopScoreComponent extends React.Component {
   }
 
     fetchTopScore = () => {
-      axios.get(url)
+      axios.get(url + "/topscores")
         .then(response => {
           let name = response.data[0].name
           let bestScore = response.data[0].score
@@ -43,11 +43,11 @@ class TopScoreComponent extends React.Component {
       let name = this.state.newTop
       let newBestScore = this.props.wins
       let topScoreData = {
-        "name":`${name}`,
-        "score":`${newBestScore}`
+        "name": name,
+        "score": newBestScore
       }
 
-      axios.patch(url+"/1", topScoreData)
+      axios.patch(url+"/topscores/1", topScoreData)
         .then(response => {
           console.log(response);
           this.setState({

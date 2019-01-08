@@ -126,16 +126,18 @@ class GameContainer extends React.Component {
                </div>
        }
     }
-     // || this.gameOver()
+
 
     render(){
+
         let wordArr = this.state.word.split("")
           let letterSpaces = wordArr.map((letter)=>{
             return <LetterSpace key={uuid()}  value={this.state.letterState[`${letter}`] }
                                 letter={letter}/>
           })
-// this.state.win
+console.log(process.env)
       return(
+
         <div>
           <br></br>
           <button className="ui big green button" onClick={this.resetState}>Start New Game</button>

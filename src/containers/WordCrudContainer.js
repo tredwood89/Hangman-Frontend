@@ -1,10 +1,9 @@
 import React from 'react';
 import Wordform from '../components/Wordform';
 import axios from 'axios';
+const url = process.env.REACT_APP_HOST
 
-const url = 'http://localhost:4000/api/v1/words'
 // const url = process.env.HOST + "/words"
-// const url = "https://hangman-react-backend.herokuapp.com/api/v1/words"
 
 class WordCrudContainer extends React.Component {
 
@@ -17,7 +16,7 @@ class WordCrudContainer extends React.Component {
       "difficulty":`${difficulty}`
     }
 
-    axios.post(url, newWordData)
+    axios.post(url+"/words", newWordData)
       .then(response => {
         this.notifyWordSaved(response.data)
       })
@@ -26,7 +25,6 @@ class WordCrudContainer extends React.Component {
   notifyWordSaved = (obj) => {
     if (obj) {
       alert(obj.choice.toUpperCase()+" Added Successfully")
-      // this.componentWillUnMount(console.log("unmounted"))
     }
   }
 
@@ -52,9 +50,6 @@ class WordCrudContainer extends React.Component {
     )
   }
 }
-
-
-
 
 
 export default WordCrudContainer;

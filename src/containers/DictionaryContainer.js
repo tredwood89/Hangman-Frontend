@@ -1,8 +1,7 @@
 import React from 'react';
-import keycode from "../keycode"
 import HintComponent from "../components/HintComponent";
 import axios from 'axios';
-
+const url = process.env.REACT_APP_WORDS_HOST
 
 
 class DictionaryContainer extends React.Component {
@@ -25,13 +24,13 @@ class DictionaryContainer extends React.Component {
     this.fetchDicitonary()
   }
 
-// const proxyurl = "https://cors-anywhere.herokuapp.com/"
   fetchDicitonary = () => {
-    let word = this.props.lookUpWord
 
-    axios.get(`https://cors-anywhere.herokuapp.com/https://wordsapiv1.p.mashape.com/words/${word}/definitions`, {
+    let word = this.props.lookUpWord
+// `${word}/definitions`
+    axios.get( url + word + "/definitions", {
     headers:{
-      "X-Mashape-Key":keycode,
+      "X-Mashape-Key":process.env.REACT_APP_keycode,
       "X-Mashape-Host":"wordsapiv1.p.mashape.com"
     }
   })
